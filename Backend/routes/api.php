@@ -14,6 +14,7 @@ use App\Http\Controllers\EmployeeDeptController;
 use App\Http\Controllers\EmployeeCourseController;
 use App\Http\Controllers\EmployeePayrollController;
 use App\Http\Controllers\EmployeeController;
+use App\Http\Controllers\UserController;
 
 
 /*
@@ -141,12 +142,9 @@ Route::group([
         Route::post('login', [UserController::Class, 'login_user']);
 
         Route::group(['middleware' => 'auth:sanctum'], function (){
-            Route::get('get_all_users', [UserController::Class, 'get_users']);
+        Route::get('get_all_users', [UserController::Class, 'get_users']);
         });
-
         Route::get('me', [UserController::Class, 'get_me']);
-
-
 
 });
 
