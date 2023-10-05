@@ -5,16 +5,17 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use GuzzleHttp\Client;
 
-class LecturerPaymentController extends Controller
+class PayrollController extends Controller
 {
     //
-    public function lecturerPayment(){
+    public function payroll(){
         $http = new \GuzzleHttp\Client();
         $response = $http -> get('http://127.0.0.1:8000/api/emp_payroll/get_employeepayroll');
         $result = json_decode((string)$response -> getBody(), true)['new_employee_payroll'];
         //dd($result);
 
-        return view('LecturerPayment', ['employees' => $result]);
+
+        return view('payroll', ['employees' => $result]);
 
     }
 
@@ -104,7 +105,7 @@ class LecturerPaymentController extends Controller
             "course_id"=> $course_id,
             "main_salary_id" =>$main_salary_id,
             "hour_salary_id"=>$hour_salary_id,
-            "payroll_date" =>$req ->date
+
 
 
         ];

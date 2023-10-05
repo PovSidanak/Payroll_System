@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&family=Poppins:wght@100;200;300;400&display=swap');
 
-font-style
+
+
 :root{
     --dark1: #0000004d;
     --dark2: #181c20;
@@ -15,6 +16,14 @@ font-style
 }
 
 
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 200px;
+    background-color: #fff;
+  }
 
 .container{
     padding: 20px;

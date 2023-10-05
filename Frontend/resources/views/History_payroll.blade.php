@@ -62,12 +62,12 @@
                                                     <h1 class="page-head-line">Lecture payment </h1>
                                                     <nav>
                                                         <div class="section__container nav__links"><p>
-                                                        <span><a href="http://127.0.0.1:5173/">Lectures payment</a></span>
-                                                        <span><a>/</a></span>
-                                                        <span><a href="http://127.0.0.1:5173/Payroll">Monthly Payroll</a></span>
-                                                        <span><a>/</a></span>
-                                                        <span><a href="http://127.0.0.1:5173/History_payroll" style="color: #2bff00;">View Payroll history</a></span>
-                                                        </div>
+                                                            <span><a href="{{url('LecturerPayment')}}" >Lectures payment</a></span>
+                                                            <span><a>/</a></span>
+                                                            <span><a href="{{url('Payroll')}}">Monthly Payroll</a></span>
+                                                            <span><a>/</a></span>
+                                                            <span><a href="{{url('History_payroll')}}" style="color: #2bff00;">View Payroll history</a></span>
+                                                            </div>
                                                     </nav>
 
                                                 </div>

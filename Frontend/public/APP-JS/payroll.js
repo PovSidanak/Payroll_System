@@ -3,7 +3,7 @@
 
 let personalList = [];
 //todo: Load employee from json
-const loadingEmployees = async()=>{
+ const loadingEmployees = async()=>{
     try{
         const res = await fetch('db/employee.json');
         personalList = await res.json();
@@ -15,13 +15,13 @@ const loadingEmployees = async()=>{
     }
 };
 
-//todo: display employee to the DOM
+//todo: display employee to table
 
 const displayEmployees=(employee)=>{
     const employeeTable= employee.map((employee)=>{
         return `
         <tr>
-                    
+
                     <td >${employee.name}</td>
                     <td >${employee.course}</td>
                     <td >$${employee.salary}</td>

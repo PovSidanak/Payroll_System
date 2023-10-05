@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\EmployeePayroll;
 use Illuminate\Http\Request;
-use App\Models\EmployeePayrollCourse;
+use Illuminate\Support\Facades\DB;
 
 
 class EmployeePayrollController extends Controller
@@ -35,7 +35,19 @@ class EmployeePayrollController extends Controller
 
     }
      public function get_emppayroll (Request $req){
-        $emppayroll = EmployeePayroll::all();
+        // $emppayroll = EmployeePayroll::all();
+        // return response() -> json(['new_employee_payroll' => $emppayroll], 200);
+        // dd($emppayroll);
+        $emppayroll = DB::table('employee') ->
+        join('course','employee.course_id', '=', 'course.id')->
+        join('main_salary','employee.main_salary_id', '=', 'main_salary.id')->
+        join('hour_salary', 'employee.hour_salary_id','=', 'hour_salary.id' )->
+        
+        select('employee.*','course.name as course_name','main_salary.amount as main_salary_amount','hour_salary.amount as hour_salary_amount')->
+
+        get();
+
+
         return response() -> json(['new_employee_payroll' => $emppayroll], 200);
         dd($emppayroll);
      }

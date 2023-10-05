@@ -29,7 +29,7 @@ use App\Http\Controllers\EmployeeController;
 
 // Final Product
 Route::group([
-    'prefix' => 'empcourse_payroll'
+    'prefix' => 'emp_payroll'
 
 ], function(){
     Route::post('input_emppayroll', [EmployeePayrollController::class, 'register_emppayroll']);
@@ -66,6 +66,7 @@ Route::group([
 ], function(){
     Route::post('input_emp', [EmployeeController::class, 'register_emp']);
     Route::get('get_employee', [EmployeeController::class, 'get_emp']);
+    Route::put('update_employee', [EmployeeController::class, 'update_emp']);
 });
 
 Route::group([

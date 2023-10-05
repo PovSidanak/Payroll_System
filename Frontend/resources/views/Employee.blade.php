@@ -26,8 +26,9 @@
 
 </head>
 <body>
-    <div id="dashboardMainContainer">
-        <div class="dashboard_sidebar" id="dashboard_sidebar">
+    <div id="dashboardMainContainer" >
+        <div class="dashboard_sidebar" id="sidebar" id="dashboard_sidebar" style="width: 20%;
+        float: left;  position: sticky; top: 0; left: 0; right: 0; ">
             <h3 class="dashboard_logo" id="dashboard_logo">ITC</h3>
             <div class="dashboard_sidebar_user">
                 <img src="./images/user/profile.jpg" alt="User image." id="userImage" />
@@ -48,18 +49,20 @@
                     </ul>
             </div>
         </div>
-        <div class="dashboard_content_container" id="dashboard_content_container">
-            <div class="dashboard_topNav">
+
+        <div class="dashboard_content_container" id="dashboard_content_container" style="width: 80%;
+        float: left; ">
+            <div class="dashboard_topNav" style=" position: sticky; top: 0; left: 0; right: 0; ">
                 <a href="" id="toggleBtn"><i class="fa fa-navicon"></i></a>
                 <a href="" id="logoutBtn"><i class="fa fa-bell"></i></a>
                 <a href="" id="logoutBtn"><i class="fa fa-search"></i></a>
             </div>
-            <div class="dashboard_content">
+            <div class="dashboard_content" >
                 <div class="dashboard_content_main">
                         <div id="page-inner">
                                 <div class="row">
-                                    <div class="col-md-12">
-                                        <h1 class="page-head-line">Employees
+                                    <div class="col-md-12" style=" position: sticky; top: 0; left: 0; right: 0; ">
+                                        <h1 class="page-head-line" >Employees
                                             <a href="" class="btn btn-primary btn-sm pull-right">Back<i class="glyphicon glyphicon-arrow-right"></i></a><a href="" class="btn btn-primary btn-sm pull-right"><i class="glyphicon glyphicon-plus"></i> Add </a>
                                         </h1>
                                         <nav>
@@ -174,7 +177,7 @@
                                                                     <thead>
                                                                         <tr class="heading">
                                                                             <th>No</th>
-                                                                            <th>Full Name</th>
+                                                                            <th>Lecturer Name</th>
                                                                             <th>Gender</th>
                                                                             <th>Department</th>
                                                                             <th>Course</th>
@@ -215,7 +218,7 @@
                                                                             <td>{{$employee['email']}}</td>
                                                                             <td>{{$employee['phone']}}</td>
                                                                             <td>
-                                                                            <button class="btn btn-primary newUser">View</button>
+                                                                            <button class="btn btn-primary newUser" >View</button>
                                                                             <button class="btn btn-primary" >Edit</button>
                                                                             <button class="btn btn-danger" >Delete</button>
                                                                             </td>
@@ -227,21 +230,7 @@
                                                                 </table>
 
 
-                                                                <script>
-                                                                    //<!-- Create a function to show the popup form -->
-                                                                    function showdark_bg() {
-                                                                        document.getElementById("btn btn-primary newUser").style.display = "block";
-                                                                      }
 
-                                                                      // Create a function to hide the popup form
-                                                                      function hidedark_bg() {
-                                                                        document.getElementById("btn btn-primary newUser").style.display = "none";
-                                                                      }
-
-                                                                      //<!-- Attach the show and hide functions to events -->
-                                                                      document.getElementById("showdark_bg").addEventListener("click", showdark_bg);
-                                                                      document.getElementById("hidedark_bg").addEventListener("click", hidedark_bg);
-                                                                  </script>
 
 
                                                                 <footer>
@@ -271,7 +260,8 @@
                                                                      </header>
 
                                                                      <div class="body">
-                                                                        <form action="" id="myForm">
+                                                                        <form action="{{url('create_employee')}}" id="myForm" method="POST">
+                                                                            @csrf
                                                                             <div>
                                                                                 <label>
                                                                                     <div type="file" name="" id="uploadimg">
@@ -284,51 +274,71 @@
                                                                                 <div class="nameField">
                                                                                     <div class="form_control">
                                                                                         <label for="fName">First Name:</label>
-                                                                                        <input type="text" name="" id="fName" required>
+                                                                                        <input type="text" name="firstname" id="fName" >
                                                                                     </div>
 
                                                                                     <div class="form_control">
                                                                                         <label for="lName">Last Name:</label>
-                                                                                        <input type="text" name="" id="lName" required>
+                                                                                        <input type="text" name="lastname" id="lName" >
                                                                                     </div>
                                                                                 </div>
+                                                                                <div class="nameField">
+                                                                                    <div class="form_control">
+                                                                                        <label for="gender">Gender:</label>
+                                                                                        <input type="text" name="gender" id="gender" >
+                                                                                    </div>
 
-                                                                                <div class="form_control">
-                                                                                    <label for="gender">Gender:</label>
-                                                                                    <input type="text" name="" id="gender" required>
+                                                                                    <div class="form_control">
+                                                                                        <label for="department">Department:</label>
+                                                                                        <input type="text" name="dept" id="department" >
+                                                                                    </div>
                                                                                 </div>
+                                                                                <div class="nameField">
+                                                                                    <div class="form_control">
+                                                                                        <label for="degree">Degree:</label>
+                                                                                        <input type="text" name="degree" id="degree" >
+                                                                                    </div>
 
-                                                                                <div class="form_control">
-                                                                                    <label for="department">Department:</label>
-                                                                                    <input type="text" name="" id="department" required>
+                                                                                    <div class="form_control">
+                                                                                        <label for="course">Course:</label>
+                                                                                        <input type="text" name="course" id="course" >
+                                                                                    </div>
                                                                                 </div>
-
-                                                                                <div class="form_control">
-                                                                                    <label for="course">Course:</label>
-                                                                                    <input type="text" name="" id="course" required>
+                                                                                <div class="nameField">
+                                                                                    <div class="form_control">
+                                                                                        <label for="main_salary">Main salary:</label>
+                                                                                        <input type="text" name="main_salary" id="main_salary" >
+                                                                                    </div>
+                                                                                    <div class="form_control">
+                                                                                        <label for="hour_salary">Hour salary:</label>
+                                                                                        <input type="text" name="hour salary" id="hour_salary" >
+                                                                                    </div>
                                                                                 </div>
-
+                                                                                <div class="nameField">
+                                                                                    <div class="form_control">
+                                                                                        <label for="email">Email:</label>
+                                                                                        <input type="email" name="email" id="email" >
+                                                                                    </div>
+                                                                                    <div class="form_control">
+                                                                                        <label for="phone">Phone:</label>
+                                                                                        <input type="number" name="phone" id="phone" >
+                                                                                    </div>
+                                                                                </div>
                                                                                 <div class="form_control">
                                                                                     <label for="position">Position:</label>
-                                                                                    <input type="text" name="" id="position" required>
+                                                                                    <input type="text" name="position" id="position" >
                                                                                 </div>
 
                                                                                 <div class="form_control">
-                                                                                    <label for="email">Email:</label>
-                                                                                    <input type="email" name="" id="email" required>
+                                                                                    <label for="sDate">Start Date:</label>
+                                                                                    <input type="date" name="start_date" id="sDate" required>
                                                                                 </div>
+                                                                            <footer class="popupFooter">
+                                                                                <button form="myForm" type="submit" class="submitBtn">Submit</button>
+                                                                             </footer>
 
-                                                                                <div class="form_control">
-                                                                                    <label for="phone">Phone:</label>
-                                                                                    <input type="number" name="" id="phone" required>
-                                                                                </div>
-                                                                            </div>
                                                                         </form>
                                                                      </div>
-
-                                                                     <footer class="popupFooter">
-                                                                        <button form="myForm" class="submitBtn">Submit</button>
-                                                                     </footer>
                                                                 </div>
 
                                                             </div>

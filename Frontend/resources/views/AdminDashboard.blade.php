@@ -6,7 +6,32 @@
     <script src="https://use.fontawesome.com/0c7a3095b5.js"></script>
      <!--Font Awesome CDN-->
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-</head>
+
+     <link ref="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet"/>
+    <!-- MDB -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.2/mdb.min.css" rel="stylesheet"/>
+    <style>
+        .profile{
+      width: 935px;
+    }
+    .content{
+        width: 935px;
+        justify-content: center;
+        align-items: center;
+
+    }
+    .news{
+        width: 600px;
+        background-color: #eee;
+
+    }
+
+
+    </style>
+
+    </head>
 <body>
     <div id="dashboardMainContainer">
         <div class="dashboard_sidebar" id="dashboard_sidebar">
@@ -26,7 +51,7 @@
                     <li class="menuActive">
                         <a href="{{url('LecturerPayment')}}"><i class="fa fa-dollar"></i>&nbsp;&nbsp;<span class="menuText">Lecturer Payment</span></a>
                     </li>
-                   
+
                 </ul>
             </div>
         </div>
@@ -42,14 +67,15 @@
                         <div class="container">
                             <div>
                                 <p class="p1">Admin Dashboard</p>
-                                <hr>
-                                <p class="p2">Welcome Admin</p>
-                                <p class="p3">Avatar</p>
+
+
                             </div>
-                            <div class="Images">
-                                <img src="./images/user/profile.jpg" alt="User image." id="profileImage"/>
+                            <div class="Images" class="card-body text-center">
+                                <img src="Admin.png" id="profileImage" alt="avatar"
+                                class="rounded-circle img-fluid" style="width: 200px;" />
                             </div>
                             <div>
+                                <h5 class="my-3" style="align-content:center;">John Smith</h5>
                                 <div class="name">
                                     <p class="p4">Name</p>
                                     <p class="p5"><td><input type="text"></td></p>

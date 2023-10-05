@@ -40,8 +40,8 @@ showInfo()
 
 newMemberAddBtn.addEventListener('click', ()=> {
     isEdit = false
-    submitBtn.innerHTML = "Submit"
-    modalTitle.innerHTML = "Fill the Form"
+    //submitBtn.innerHTML = "Submit"
+    //modalTitle.innerHTML = "Fill the Form"
     popupFooter.style.display = "block"
     darkBg.classList.add('active')
     popupForm.classList.add('active')
@@ -268,56 +268,64 @@ function deleteInfo(index){
 }
 
 
-form.addEventListener('submit', (e)=> {
-    e.preventDefault()
-
-    const information = {
-        id: Date.now(),
-        fName: fName.value,
-        lName: lName.value,
-        genderVal: gender.value,
-        departmentVal:department.value,
-        courseVal:course.value,
-        positionVal: position.value,
-        emailVal: email.value,
-        phoneVal: phone.value
-    }
-
-    if(!isEdit){
-        originalData.unshift(information)
-    }
-    else{
-        originalData[editId] = information
-    }
-    getData = [...originalData]
-    localStorage.setItem('userProfile', JSON.stringify(originalData))
-
-    submitBtn.innerHTML = "Submit"
-    modalTitle.innerHTML = "Fill the Form"
-
-    darkBg.classList.remove('active')
-    popupForm.classList.remove('active')
-    form.reset()
 
 
-    highlightIndexBtn()
-    displayIndexBtn()
-    showInfo()
+//sidebar stay still
+window.addEventListener('scroll', function() {
+    var sidebar = document.querySelector('.sidebar');
+    sidebar.style.top = window.scrollY + 'px';
+  });
 
-    var nextBtn = document.querySelector(".next")
-    var prevBtn = document.querySelector(".prev")
-    if(Math.floor(maxIndex) > currentIndex){
-        nextBtn.classList.add("act")
-    }
-    else{
-        nextBtn.classList.remove("act")
-    }
+// form.addEventListener('submit', (e)=> {
+//     e.preventDefault()
+
+//     const information = {
+//         id: Date.now(),
+//         fName: fName.value,
+//         lName: lName.value,
+//         genderVal: gender.value,
+//         departmentVal:department.value,
+//         courseVal:course.value,
+//         positionVal: position.value,
+//         emailVal: email.value,
+//         phoneVal: phone.value
+//     }
+
+//     if(!isEdit){
+//         originalData.unshift(information)
+//     }
+//     else{
+//         originalData[editId] = information
+//     }
+//     getData = [...originalData]
+//     localStorage.setItem('userProfile', JSON.stringify(originalData))
+
+//     submitBtn.innerHTML = "Submit"
+//     modalTitle.innerHTML = "Fill the Form"
+
+//     darkBg.classList.remove('active')
+//     popupForm.classList.remove('active')
+//     form.reset()
 
 
-    if(currentIndex > 1){
-        prevBtn.classList.add("act")
-    }
-})
+//     highlightIndexBtn()
+//     displayIndexBtn()
+//     showInfo()
+
+//     var nextBtn = document.querySelector(".next")
+//     var prevBtn = document.querySelector(".prev")
+//     if(Math.floor(maxIndex) > currentIndex){
+//         nextBtn.classList.add("act")
+//     }
+//     else{
+//         nextBtn.classList.remove("act")
+//     }
+
+
+//     if(currentIndex > 1){
+//         prevBtn.classList.add("act")
+//     }
+// })
 
 
 function next(){

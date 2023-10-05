@@ -19,6 +19,7 @@ class Employees extends Model
         'position_id',
         'academic_year_id',
         'degree_id',
+        'start_date',
         'department_id',
         'course_id',
         'main_salary_id',

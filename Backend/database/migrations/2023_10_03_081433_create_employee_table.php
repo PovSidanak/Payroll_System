@@ -18,8 +18,9 @@ return new class extends Migration
             $table->string('email');
             $table->string('phone');
             $table->integer('position_id');
-            $table->integer('academic_year_id');
+            $table->integer('academic_year_id') ->nullable();
             $table->integer('degree_id');
+            $table->string('start_date');
             $table->integer('department_id');
             $table->integer('course_id');
             $table->integer('main_salary_id');

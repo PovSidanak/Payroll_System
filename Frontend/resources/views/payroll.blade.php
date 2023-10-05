@@ -65,12 +65,12 @@
                                                     </h1>
                                                     <nav>
                                                         <div class="section__container nav__links"><p>
-                                                        <span><a href="">Lectures payment</a></span>
-                                                        <span><a>/</a></span>
-                                                        <span><a href="http://127.0.0.1:5173/Payroll" style="color: #2bff00;">Monthly Payroll</a></span>
-                                                        <span><a>/</a></span>
-                                                        <span><a href="http://127.0.0.1:5173/History_payroll">View Payroll history</a></span>
-                                                        </div>
+                                                            <span><a href="{{url('LecturerPayment')}}" >Lectures payment</a></span>
+                                                            <span><a>/</a></span>
+                                                            <span><a href="{{url('Payroll')}}" style="color: #2bff00;">Monthly Payroll</a></span>
+                                                            <span><a>/</a></span>
+                                                            <span><a href="{{url('History_payroll')}}">View Payroll history</a></span>
+                                                            </div>
                                                     </nav>
 
                                                 </div>
@@ -145,7 +145,6 @@
                                                                     <thead>
                                                                         <tr class="text-dark">
 
-
                                                                             <th scope="col">Name</th>
                                                                             <th scope="col">Course</th>
                                                                             <th scope="col">Main Salary</th>
@@ -158,38 +157,28 @@
                                                                         </tr>
                                                                     </thead>
                                                                     <tbody id="Employees-table">
-                                                                        <!-- <tr>
-                                                                            <th scope="row">1</th>
-                                                                            <td>Mark</td>
-                                                                            <td>Otto</td>
-                                                                            <td>$12.55</td>
-                                                                            <td>100</td>
-                                                                            <td>$1255</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <th scope="row">2</th>
-                                                                            <td>Norbert</td>
-                                                                            <td>Otto</td>
-                                                                            <td>$12.55</td>
-                                                                            <td>100</td>
-                                                                            <td>$1255</td>
-                                                                        </tr> -->
+                                                                         {{-- @foreach ($employees as $employee )
 
+                                                                        <tr>
+
+                                                                            <td>{{$employee['id']}}</td>
+                                                                            <td>{{$employee['name']}}</td>
+                                                                            <td>{{$employee['course_name']}}</td>
+                                                                            <td>{{$employee['main_salary_amount']}}</td>
+                                                                            <td>{{$employee['hour_salary_amount']}}<td>
+                                                                            <td><input type="number" class="hours-worked" style="width:60px" min="0">  h</td>
+                                                                            <td class="Monthly-pay fw-bold"></td>
+                                                                            <td>$  <input type="number" class="Project-incentive" style="width:60px" min="0"></td>
+                                                                            <td class="Monthly2-pay fw-bold"></td>
+                                                                        </tr>
+
+                                                                    @endforeach --}}
                                                                     </tbody>
-                                                                    <!-- <tfoot id="Summery " class="fw-bold text-dark">
-                                                                       <tr>
-                                                                        <th scope="row">Sum</th>
-                                                                        <td class="text-sucess">Max: <span id="Max-wage">$13.55</span></td>
-                                                                        <td class="text-danger">Min: <span id="Min-wage">$12.55</span></td>
-                                                                        <td class="text-primary">Avg: <span id="Avg-wage">$13.05</span></td>
-                                                                        <td><span id="Total-WH">200 h</span></td>
-                                                                        <td><span id="Total-pay">$ 2610</span></td>
-                                                                       </tr>
-                                                                    </tfoot> -->
                                                                 </table>
                                                             </div>
 
-                                                            <script src="APP-JS/payroll.js"> </script>
+
+                                                          <script src="APP-JS/payroll.js"> </script>
 
                                                         </div>
                                                     </div>

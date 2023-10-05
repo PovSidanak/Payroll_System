@@ -22,7 +22,7 @@
 </head>
 <body>
     <div id="dashboardMainContainer">
-        <div class="dashboard_sidebar" id="dashboard_sidebar">
+        <div class="dashboard_sidebar" id="dashboard_sidebar" style=" position: sticky; top: 0; left: 0; right: 0; ">
             <h3 class="dashboard_logo" id="dashboard_logo">ITC</h3>
             <div class="dashboard_sidebar_user">
                 <img src="./images/user/profile.jpg" alt="User image." id="userImage" />
@@ -163,10 +163,10 @@
                                                                             <input type="search" name="" id="search" placeholder="Enter name/ course">
                                                                         </div>
                                                                     </div>
-
-                                                                    <div class="addMemberBtn">
+                                                                    {{-- <div class="addMemberBtn">
                                                                         <button>New member</button>
-                                                                    </div>
+                                                                    </div> --}}
+
 
                                                                 </header>
 
@@ -180,25 +180,34 @@
                                                                             <th>Course</th>
                                                                             <th>Main Salary</th>
                                                                             <th>Hour wage</th>
+                                                                            <th></th>
                                                                             <th>Start Date</th>
+                                                                            <th></th>
                                                                             <th>Action</th>
                                                                         </tr>
                                                                     </thead>
 
 
                                                                     <tbody class="userInfo">
-                                                                         <td>1</td>
-                                                                        <td>Tal Tongsreng</td>
-                                                                        <td>Software Engineering</td>
-                                                                        <td>$250</td>
-                                                                        <td>$9</td>
-                                                                        <td>2023-20-02</td>
-                                                                        <td>
-                                                                            <!--  <button class="btn btn-primary newUser" data-bs-toggle="modal" data-bs-target="#userForm">New User <i class="bi bi-people"> -->
-                                                                            <button class="btn btn-primary newUser">View</button>
+                                                                        @foreach ( $employees as $employee )
+
+                                                                        <tr>
+                                                                            <td>{{$employee['id']}}</td>
+                                                                            <td>{{$employee['name']}}</td>
+                                                                            <td>{{$employee['course_name']}}</td>
+                                                                            <td>{{$employee['main_salary_amount']}}</td>
+                                                                            <td>{{$employee['hour_salary_amount']}}<td>
+                                                                            <td>{{$employee['start_date']}}</td>
+                                                                            <td></td>
+                                                                           <td>
+                                                                            <button class="btn btn-primary newUser" >View</button>
                                                                             <button class="btn btn-primary" >Edit</button>
                                                                             <button class="btn btn-danger" >Delete</button>
-                                                                        </td>
+                                                                            </td>
+                                                                        </tr>
+
+                                                                    @endforeach
+
 
                                                                     </tbody>
 
@@ -222,7 +231,7 @@
 
                                                             <!--Popup Form-->
 
-                                                            <div class="dark_bg">
+                                                            {{-- <div class="dark_bg">
 
                                                                 <div class="popup">
                                                                      <header>
@@ -231,7 +240,8 @@
                                                                      </header>
 
                                                                      <div class="body">
-                                                                        <form action="" id="myForm">
+                                                                        <form action="{{url('create_lecturerPayment')}}" id="myForm" method="POST">
+                                                                            @csrf
                                                                             <div>
                                                                                 <label>
                                                                                     <div type="file" name="" id="uploadimg">
@@ -244,35 +254,35 @@
                                                                                 <div class="nameField">
                                                                                     <div class="form_control">
                                                                                         <label for="fName">First Name:</label>
-                                                                                        <input type="text" name="" id="fName" required>
+                                                                                        <input type="text" name="firstname" id="fName" required>
                                                                                     </div>
 
                                                                                     <div class="form_control">
                                                                                         <label for="lName">Last Name:</label>
-                                                                                        <input type="text" name="" id="lName" required>
+                                                                                        <input type="text" name="lastname" id="lName" required>
                                                                                     </div>
                                                                                 </div>
 
                                                                                 <div class="form_control">
                                                                                         <label for="course">Course:</label>
-                                                                                        <input type="text" name="" id="course" required>
+                                                                                        <input type="text" name="course" id="course" required>
                                                                                 </div>
 
                                                                                 <div class="postSalary">
                                                                                     <div class="form_control">
                                                                                         <label for="hour">Main salary:</label>
-                                                                                        <input type="salary" name="" id="hour" required>
+                                                                                        <input type="salary" name="mainsalary" id="hour" required>
                                                                                     </div>
 
                                                                                     <div class="form_control">
                                                                                         <label for="salary">Hour Salary</label>
-                                                                                        <input type="salary" name="" id="salary" required>
+                                                                                        <input type="salary" name="hoursalary" id="salary" required>
                                                                                     </div>
                                                                                 </div>
 
                                                                                 <div class="form_control">
                                                                                     <label for="sDate">Start Date:</label>
-                                                                                    <input type="date" name="" id="sDate" required>
+                                                                                    <input type="date" name="date" id="sDate" required>
                                                                                 </div>
 
                                                                             </div>
@@ -284,7 +294,7 @@
                                                                      </footer>
                                                                 </div>
 
-                                                            </div>
+                                                            </div> --}}
 
 
                                                             <script src="APP-JS/lecturer1.js"></script>

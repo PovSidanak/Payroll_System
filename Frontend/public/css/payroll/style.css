@@ -1,7 +1,8 @@
-/*remove margin page*/  
+/*remove margin page*/
 *,*::before,*::after{box-sizing:border-box}body,h1,h2,h3,h4,p,figure,blockquote,dl,dd{margin:0}ul[role="list"],ol[role="list"]{list-style:none}html:focus-within{scroll-behavior:smooth}body{min-height:100vh;text-rendering:optimizeSpeed;line-height:1.5}a:not([class]){text-decoration-skip-ink:auto}img,picture{max-width:100%;display:block}input,button,textarea,select{font:inherit}@media(prefers-reduced-motion:reduce){html:focus-within{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important;scroll-behavior:auto !important}}
 font
 /*---*/
+
 body#loginBody{
 	background: url('../images/login-background.jpg') no-repeat center center fixed;
 	background-size: cover;
@@ -130,21 +131,21 @@ div.dashboard_content_main{
 pre {
 	overflow: auto;
   }
-  
-  
 
-  
+
+
+
   body {
 	background-color: #fff;
   }
-  
+
   .table {
 	width: 100%;
 	max-width: 100%;
 	margin-bottom: 20px;
   }
-  
-  
+
+
   .btn {
 	display: inline-block;
 	padding: 6px 12px;
@@ -164,21 +165,21 @@ pre {
 	border: 1px solid transparent;
 	border-radius: 4px;
   }
-  
+
   .btn:hover,
   .btn:focus {
 	color: #333;
 	text-decoration: none;
   }
-  
+
   .btn-default:hover,
-  
+
   .btn-primary {
 	color: #fff;
 	background-color: #428bca;
 	border-color: #357ebd;
   }
-  
+
   .panel {
 	margin-bottom: 20px;
 	background-color: #fff;
@@ -204,9 +205,9 @@ pre {
 	font-size: 16px;
 	color: inherit;
   }
-  
-  
-  
+
+
+
   .panel-default {
 	border-color: #ddd;
   }
@@ -219,17 +220,17 @@ pre {
   nav {
 	background-color: rgb(255, 255, 255);
   }
-  
+
   .nav__links a {
 	font-size: 16px;
 	color: var(--white);
 	transition: 0.3s;
   }
-  
+
   .nav__links a:hover {
 	color: #00ff22;
   }
-  
+
   .nav__links i {
 	font-size: 19.2px;
   }
@@ -312,7 +313,7 @@ form .inputField > div input{
     border: none;
     outline: none;
     background: transparent;
-    border-bottom: 1px solid rgb(117, 117, 117);
+    border-bottom: 1px white;
 }
 
 .modal-footer .submit{
