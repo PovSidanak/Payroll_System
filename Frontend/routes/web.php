@@ -43,4 +43,10 @@ Route::post('/create_payroll',[EmployeeController::class, 'create_payroll']);
 
 
 
+Route::get('/login',  [UserController::Class, 'loginpage']);
+Route::post('/loginuser',  [UserController::Class, 'login_handle']);
+
+Route::get('/register', [UserController::Class, 'registerpage']);
+Route::post('/registeruser', [UserController::Class, 'register']);
+
 
