@@ -13,42 +13,28 @@
     <!-- MDB -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.2/mdb.min.css" rel="stylesheet"/>
     <style>
-        .profile{
-      width: 935px;
-    }
-    .content{
-        width: 935px;
-        justify-content: center;
-        align-items: center;
-
-    }
     .news{
-        width: 600px;
-        background-color: #eee;
-
+        background-color: #fff;
     }
-
-
     </style>
-
     </head>
 <body>
     <div id="dashboardMainContainer">
         <div class="dashboard_sidebar" id="dashboard_sidebar">
             <h3 class="dashboard_logo" id="dashboard_logo">ITC</h3>
             <div class="dashboard_sidebar_user">
-                <img src="./images/user/profile.jpg" alt="User image." id="userImage" />
+                <img src="Admin.png" alt="User image." id="userImage" />
                 <span>Admin</span>
             </div>
             <div class="dashboard_sidebar_menus">
                 <ul class="dashboard_menu_lists">
-                    <li>
+                    <li class="menuActive">
                         <a href="{{url('Admindashboard')}}"><i class="fa fa-reorder"></i>&nbsp;&nbsp;<span class="menuText">Dashboard</span></a>
                     </li>
                     <li>
                         <a href="{{url('Employee')}}"><i class="fa fa-user-plus"></i>&nbsp;&nbsp;<span class="menuText">Employees</span></a>
                     </li>
-                    <li class="menuActive">
+                    <li >
                         <a href="{{url('LecturerPayment')}}"><i class="fa fa-dollar"></i>&nbsp;&nbsp;<span class="menuText">Lecturer Payment</span></a>
                     </li>
 
@@ -67,43 +53,47 @@
                         <div class="container">
                             <div>
                                 <p class="p1">Admin Dashboard</p>
-
-
                             </div>
-                            <div class="Images" class="card-body text-center">
+                             
+                            <table class="table table-striped-columns"> 
+                            <div class="Images card-body text-center" style="align-items: center;">
                                 <img src="Admin.png" id="profileImage" alt="avatar"
-                                class="rounded-circle img-fluid" style="width: 200px;" />
-                            </div>
+                                class="rounded-circle img-fluid"/>
                             <div>
-                                <h5 class="my-3" style="align-content:center;">John Smith</h5>
-                                <div class="name">
-                                    <p class="p4">Name</p>
-                                    <p class="p5"><td><input type="text"></td></p>
-                                </div>
-                                <div class="name">
-                                    <p class="p4">E-mail</p>
-                                    <p class="p6"><td><input type="text"></td></p>
-                                </div>
-                                <div class="name">
-                                    <p class="p4">Created At</p>
-                                    <p class="p7"><td><input type="text"></td></p>
-                                </div>
-                                <div class="name">
-                                    <p class="p4">Last Updated</p>
-                                    <p class="p8"><td><input type="text"></td></p>
+                               <br>
+                                <br>
+                             <div class="d-flex flex-column mb-3" id="Employees-table">
+                                  <div class="card mb-4 news">
+                                     <div class="card-body" style="justify-content:center;">
+                                        <div class="row">
+                                        <div class="col-sm-3"  class="p-2">
+                                            <p class="mb-0" style="justify-content:center;">UserName</p>
+                                        </div>
+                                        <div class="col-sm-9">
+                                            <p class="text-muted mb-0">Johnatan Smith</p>
+                                        </div>
+                                        </div>
+                                        <hr>
+                                        <div class="row" class="p-2">
+                                        <div class="col-sm-3">
+                                            <p class="mb-0">Email</p>
+                                        </div>
+                                        <div class="col-sm-9">
+                                            <p class="text-muted mb-0">example@example.com</p>
+                                        </div>
+                                     
+                                     </div>
+                                   </div>
                                 </div>
                             </div>
-                            <tr>
-                                <td>
-                                    <button class="button2">Save</button>
-                                </td>
-                            </tr>
                         </div>
                     </div>
+                            </table>
+                    
                 </div>
             </div>
-        </div>
-    </div>
+</div>
+            
 <script>
     var sideBarIsOpen = true;
 

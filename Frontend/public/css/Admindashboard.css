@@ -4,11 +4,10 @@
 /*---*/
 
 /* add a style to our button.*/
-
 div.formContainer{
 	width: 80%;
 	position: relative;
-	border-radius: 10px;
+	border-radius: none;
 }
 div.formContainer input{
 	width: 100%;
@@ -177,13 +176,14 @@ div.content{
     align-items: center;
 }
 div.container{
-    background-color: #fff;
+    background-color: #f2f2f2;
     width: 700px;
     height: 600px;
     justify-content: center;
-    border: 1px;
-    border-color: black;
-    border-style: solid;
+    border: 1px solid transparent;
+	border-radius: 2px;
+	box-shadow: 0 0 10px 0 rgba(0,0,0,0.3);
+	
 
 }
 .p1{
